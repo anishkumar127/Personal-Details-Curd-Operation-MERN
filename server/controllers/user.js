@@ -65,6 +65,19 @@ class userController{
             return res.status(400).json(error);
         }
     };
+    static deleteUser = async(req,res)=>{
+        const {id} = req.params;  // dynamic id router get.
+        try{
+            if(id){
+             const deletedUserData = await userModel.findByIdAndDelete(id);
+             return res.status(200).json(deletedUserData);
+            }else{
+                return res.status(400).json({"message":"ID not found"});
+            }
+        }catch(error){
+            return res.status(400).json(error);
+        }
+    }
 }
 
 export default userController;

@@ -16,5 +16,6 @@ router.get("/users/single/:id",userController.getSingleUser);
 router.put("/users/:id",userController.updateUser);
 
 // delete
+router.delete("/users/:id",userController.deleteUser);
 
 export default router;
