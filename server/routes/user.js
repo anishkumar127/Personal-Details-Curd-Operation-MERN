@@ -6,5 +6,15 @@ import userController from '../controllers/user.js';
 // user GET
 
 router.get("/users",userController.getAllUser);
+router.post("/users",userController.createUser);
+
+// single data GET. dynamic routing.
+router.get("/users/single/:id",userController.getSingleUser);
+
+
+// edit & update
+router.put("/users/:id",userController.updateUser);
+
+// delete
 
 export default router;

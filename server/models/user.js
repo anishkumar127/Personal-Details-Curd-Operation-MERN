@@ -3,11 +3,9 @@ import mongoose from 'mongoose';
 const userSchema = mongoose.Schema({
     name:{
         type:String,
-        require:true,
     },
-    emai:{
+    email:{
         type:String,
-       require:true,
     },
     age:{
         type:Number,

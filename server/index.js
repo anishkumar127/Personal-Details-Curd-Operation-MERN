@@ -8,7 +8,8 @@ connectDB();
 
 const PORT = process.env.PORT || 8000;
 
-
+// apply middleware of interact with json.
+app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("api is running...");
 });

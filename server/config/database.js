@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-// import {mongoUr} from
+
 const connectDB  = async  () =>{  
     try{
-  const connection = await mongoose.connect("mongodb://localhost:27017/curd-mern");
-
+  const connection = await mongoose.connect("mongodb+srv://anishkumar:anishking@cluster0.ybty6.mongodb.net/crud-mern?retryWrites=true&w=majority");
+  // mongodb://localhost:27017/curd-mern
    if(connection){
     console.log("connected successfully...");
    }
