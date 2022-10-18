@@ -31,7 +31,29 @@ const Home = () => {
             </form>
 
           </div>
-          <div className="col-md-6">Table</div>
+          <div className="col-md-6">
+          <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td><div className="btn btn-primary">Edit</div></td>
+      <td><div className="btn btn-danger">Delete</div></td>
+    </tr>
+   
+  </tbody>
+</table>
+          </div>
         </div>
       </div>
 
