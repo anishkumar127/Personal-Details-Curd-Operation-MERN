@@ -52,19 +52,19 @@ const Home = () => {
               </thead>
               <tbody>
                 {
-                  users && users.map((user)=>{
+                  users && users.map((user) => {
                     return (
                       <tr key={user._id}>
-                      <td>{user.name}</td>
-                      <td>{user.email}</td>
-                      <td>{user.age}</td>
-                      <td><div className="btn btn-primary">Edit</div></td>
-                      <td><div className="btn btn-danger">Delete</div></td>
-                    </tr>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.age}</td>
+                        <td><div className="btn btn-primary">Edit</div></td>
+                        <td><div className="btn btn-danger">Delete</div></td>
+                      </tr>
                     )
                   })
                 }
-               
+
 
               </tbody>
             </table>
