@@ -1,14 +1,40 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 const Home = () => {
   const [users, setUsers] = useState([]);
+  const [reRender, setReRender] = useState(false);
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    age: "",
+  })
   useEffect(() => {
     const getAllUserData = async () => {
       const res = await axios.get("http://localhost:8000/api/v1/users");
       setUsers(res.data);
+      setInput({
+        name: "",
+        email: "",
+        age: ""
+      })
     }
     getAllUserData();
-  }, [])
+  }, [reRender]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post("http://localhost:8000/api/v1/users", input);
+    setReRender(true);
+  };
+  // handle delete 
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:8000/api/v1/users/${id}`);
+    const userAfterDelete = users.filter((item) => {
+      return item._id !== id;
+    });
+    setUsers(userAfterDelete);
+  };
   return (
     <>
       <div className="container">
@@ -19,20 +45,32 @@ const Home = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <input
+                  name="name"
+                  value={input.name}
+                  onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
 
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputPassword1" />
+                <input
+                  name="email"
+                  value={input.email}
+                  onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                  type="email" class="form-control" id="exampleInputPassword1" />
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Age</label>
-                <input type="number" class="form-control" id="exampleInputPassword1" />
+                <input
+                  name="age"
+                  value={input.age}
+                  onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                  type="number" class="form-control" id="exampleInputPassword1" />
               </div>
 
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -58,8 +96,11 @@ const Home = () => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.age}</td>
-                        <td><div className="btn btn-primary">Edit</div></td>
-                        <td><div className="btn btn-danger">Delete</div></td>
+                        <td>
+                          {/* <Link to={`/edit/${user._id`}><button className="btn btn-primary">Edit</button> </Link> */}
+                          <Link to={`/edit/${user._id}`}><button className="btn btn-primary">Edit</button></Link>
+                        </td>
+                        <td><button onClick={() => handleDelete(user._id)} className="btn btn-danger">Delete</button></td>
                       </tr>
                     )
                   })
