@@ -40,8 +40,8 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <div style={{ backgroundColor: "gray" }}>
-              <h1 className="text-white text-center mt-2"> MERN CURD </h1>
+            <div style={{ backgroundColor: "#4CB5F5" }}>
+              <h1 className="text-white text-center mt-2"> Person Details - CURD Operation </h1>
             </div>
           </div>
           <div className="col-md-6">

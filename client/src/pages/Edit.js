@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const Edit = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
     email: "",
@@ -17,6 +18,8 @@ const Edit = () => {
   }, [id]);
   const handleEditSubmit = async (e) => {
     e.preventDefault();
+    await axios.put(`http://localhost:8000/api/v1/users/${id}`, input);
+    navigate("/");
   }
 
   return (
@@ -24,7 +27,7 @@ const Edit = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <div style={{ backgroundColor: "gray" }}>
+            <div style={{ backgroundColor: "#4CB5F5" }}>
               <h1 className="text-white text-center mt-2"> Update </h1>
             </div>
           </div>
@@ -55,7 +58,7 @@ const Edit = () => {
             </form>
 
           </div>
-
+          <button onClick={() => navigate("/")} className="btn btn-info mt-2">Go To Home</button>
         </div>
       </div>
 
