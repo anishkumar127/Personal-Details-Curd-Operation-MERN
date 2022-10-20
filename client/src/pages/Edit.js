@@ -11,14 +11,16 @@ const Edit = () => {
   })
   useEffect(() => {
     const getAllUserData = async () => {
-      const res = await axios.get(`http://localhost:8000/api/v1/users/single/${id}`);
+      // const res = await axios.get(`http://localhost:8000/api/v1/users/single/${id}`);
+      const res = await axios.get(`https://curd-mern-agbf.vercel.app/api/v1/users/single/${id}`);
       setInput(res.data);
     }
     getAllUserData();
   }, [id]);
   const handleEditSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8000/api/v1/users/${id}`, input);
+    // await axios.put(`http://localhost:8000/api/v1/users/${id}`, input);
+    await axios.put(`https://curd-mern-agbf.vercel.app/api/v1/users/${id}`, input);
     navigate("/");
   }
 
