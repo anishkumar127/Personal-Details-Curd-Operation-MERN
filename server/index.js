@@ -2,7 +2,7 @@ import express from 'express';
 const app = express();
 import userRoutes from './routes/user.js';
 import cors from 'cors';
-import {PORT,mongoURI} from './config/index.js';
+import {mongoURI} from './config/index.js';
 // <--  connection part start -->
 import connectDB from './config/database.js';
 connectDB();
