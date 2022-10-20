@@ -16,3 +16,22 @@ https://curd-mern-agbf.vercel.app/   // api hosted.
 #### HOSTED FRONT END LINK
 [FRONT END LINK :- ](https://curd-mern-app.vercel.app/)
 https://curd-mern-app.vercel.app/  // front end hosted.
+
+
+### Preview Front UI
+
+#### Home Page UI
+![Home Page Preview](./client/public//image/Home_page_UI.png "Person Details Preview")
+
+#### Update Page UI
+
+![Home Page Preview](/client/public//image/Update_user_UI.png "Person Details Preview")
+
+
+## Featues:
+
+- CREATE USER
+- UPDATE / EDIT USER
+- GET ALL USER DETAILS
+- GET SINGLE USER DETAILS
+- DELETE USER 
