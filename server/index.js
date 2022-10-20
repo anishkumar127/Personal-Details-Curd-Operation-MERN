@@ -8,7 +8,7 @@ import connectDB from './config/database.js';
 connectDB();
 // <-- connection part end -->
 
-// const PORT = process.env.PORT;
+const PORT = process.env.PORT  || 8000;
 
 // apply middleware of interact with json.
 app.use(express.json());
