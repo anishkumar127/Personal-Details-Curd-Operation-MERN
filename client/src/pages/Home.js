@@ -11,7 +11,8 @@ const Home = () => {
   })
   useEffect(() => {
     const getAllUserData = async () => {
-      const res = await axios.get("http://localhost:8000/api/v1/users");
+      // const res = await axios.get("http://localhost:8000/api/v1/users");
+      const res = await axios.get("https://curd-mern-agbf.vercel.app/api/v1/users"); // vercel hosted.
       setUsers(res.data);
       setInput({
         name: "",
@@ -24,12 +25,14 @@ const Home = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8000/api/v1/users", input);
+    // await axios.post("http://localhost:8000/api/v1/users", input);
+    await axios.post("https://curd-mern-agbf.vercel.app/api/v1/users", input);
     setReRender(true);
   };
   // handle delete 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:8000/api/v1/users/${id}`);
+    // await axios.delete(`http://localhost:8000/api/v1/users/${id}`);
+    await axios.delete(`https://curd-mern-agbf.vercel.app/api/v1/users/${id}`);
     const userAfterDelete = users.filter((item) => {
       return item._id !== id;
     });
