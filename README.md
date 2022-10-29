@@ -169,3 +169,6 @@ DELETE USER -> https://curd-mern-agbf.vercel.app/api/v1/users/634f04e64b08a01217
 ![Home Page Preview](/client/public//image/Update_user_UI.png "Person Details Preview")
 
 
+### Activities
+
+![Alt](https://repobeats.axiom.co/api/embed/226c149825e2f585bb69ed23d9223713cab0080e.svg "Repobeats analytics image")
