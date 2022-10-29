@@ -112,19 +112,19 @@ mongoURI=mongodb:mongodb uri goes here
 #### Live Preview GUI & API's LINK 
 
 - Live ReactJs GUI - CURD 
-```bash
+```http
 https://curd-mern-app.vercel.app/
 ```
 
 - Live Node API
   
-```bash
+```http
 https://curd-mern-agbf.vercel.app/ 
 ```
 <!-- [API URL :- ](https://curd-mern-agbf.vercel.app/) -->
 <!-- https://curd-mern-agbf.vercel.app/   // api hosted. -->
 - Node (Express) API URL
-```bash
+```http
 GET ALL USER -> https://curd-mern-agbf.vercel.app//api/v1/users
 ```
 <!-- **GET ALL USER** **:-**  https://curd-mern-agbf.vercel.app//api/v1/users -->
@@ -147,7 +147,7 @@ UPDATE USER -> https://curd-mern-agbf.vercel.app/api/v1/users/634f04d54b08a01217
 
 <!-- **UPDATE USER :-** https://curd-mern-agbf.vercel.app/api/v1/users/634f04d54b08a01217883301 -->
 
-```bash
+```http
 DELETE USER -> https://curd-mern-agbf.vercel.app/api/v1/users/634f04e64b08a0121788330a
 ```
 
